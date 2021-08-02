@@ -52,19 +52,21 @@ public class Stacks {
     }
 
     public void displayStacks(){
-        NodeList temp = top;
-        while(temp!=null){
-            System.out.print(temp+ "->");
-            temp = temp.next;
+        if(isEmpty())
+            return;
+        NodeList current = top;
+        while(current!=null){
+            System.out.print(current.data + "->");
+            current = current.next;
         }
-        System.out.print("null");
+        System.out.println("null");
     }
 
     public static void main(String[]args){
         Stacks stacks = new Stacks();
         stacks.push(1);
         stacks.push(2);
-       // stacks.displayStacks();
+        stacks.displayStacks();
 
         System.out.println(stacks.peek());
         stacks.pop();
