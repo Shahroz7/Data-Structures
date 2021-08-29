@@ -21,10 +21,6 @@ class LinkedList {
         this.size = 0;
     }
 
-    public LinkedList(NodeList head) {
-        this.head = head;
-    }
-
     public boolean isEmpty() {
         return head == null;
     }
