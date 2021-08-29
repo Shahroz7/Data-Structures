@@ -8,29 +8,29 @@ public class CircularLinkedList {
     private NodeList last;
     int size;
 
-    public CircularLinkedList(){
-        this.last=null;
-        this.size=0;
+    public CircularLinkedList() {
+        this.last = null;
+        this.size = 0;
     }
 
-    private class NodeList{
+    private class NodeList {
         private int data;
         private NodeList next;
 
-        public NodeList(int data){
-            this.data=data;
+        public NodeList(int data) {
+            this.data = data;
         }
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
-    public boolean isEmpty(){
-        return size==0;
+    public boolean isEmpty() {
+        return size == 0;
     }
 
-    public void createCircularLinkedList(){
+    public void createCircularLinkedList() {
         NodeList first = new NodeList(1);
         NodeList second = new NodeList(2);
         NodeList third = new NodeList(3);
@@ -42,47 +42,46 @@ public class CircularLinkedList {
         last = fourth;
     }
 
-    public void addToFront(int data){
+    public void addToFront(int data) {
         NodeList node = new NodeList(data);
-        if(last==null)
-            last=node;
+        if (last == null)
+            last = node;
         else
-            node.next=last.next;
-        last.next=node;
+            node.next = last.next;
+        last.next = node;
         size++;
     }
 
-    public void displayLinkedList(){
-        if(last==null)
+    public void displayLinkedList() {
+        if (last == null)
             return;
         NodeList first = last.next;
-        while(first!=last){
-            System.out.print(first.data+"-->");
+        while (first != last) {
+            System.out.print(first.data + "-->");
             first = first.next;
         }
         System.out.print(first.data);
     }
 
-    public void addToBack(int data){
-    NodeList node =  new NodeList(data);
-    if(last==null) {
-        last = node;
-        last.next = last;
-    }
-    else{
-        node.next=last.next;
-        last.next = node;
-        last=node;
-    }
-    size++;
+    public void addToBack(int data) {
+        NodeList node = new NodeList(data);
+        if (last == null) {
+            last = node;
+            last.next = last;
+        } else {
+            node.next = last.next;
+            last.next = node;
+            last = node;
+        }
+        size++;
     }
 
-    public NodeList removeFromFront(){
-        if(isEmpty())
+    public NodeList removeFromFront() {
+        if (isEmpty())
             throw new NoSuchElementException();
         NodeList temp = last.next;
-        if(last.next==last)
-            last=null;
+        if (last.next == last)
+            last = null;
         else
             last.next = temp.next;
         temp.next = null;
@@ -90,28 +89,28 @@ public class CircularLinkedList {
         return temp;
     }
 
-    public NodeList removeFromEnd(){
-        if(isEmpty())
+    public NodeList removeFromEnd() {
+        if (isEmpty())
             throw new NoSuchElementException();
         NodeList temp = last.next;
         NodeList temp2 = last.next;
-        if(last==last.next)
-            last=null;
-        else{
-            while(temp.next!=last){
+        if (last == last.next)
+            last = null;
+        else {
+            while (temp.next != last) {
                 temp = temp.next;
             }
             last = temp;
-            temp.next= temp2;
+            temp.next = temp2;
         }
 
         size--;
         return temp;
     }
 
-    public static void main(String[]args){
+    public static void main(String[] args) {
 
-        CircularLinkedList cll= new CircularLinkedList();
+        CircularLinkedList cll = new CircularLinkedList();
         //cll.createCircularLinkedList();
 
 //        cll.addToFront(3);

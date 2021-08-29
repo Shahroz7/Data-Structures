@@ -2,11 +2,11 @@ package structures;
 
 class LinkedList {
 
-     NodeList head;
+    NodeList head;
     int size;
 
     //node of singlylinkedlist
-     class NodeList {
+    class NodeList {
 
         private int data;
         private NodeList next;
@@ -188,7 +188,7 @@ public class SinglyLinkedList {
         list.addToFront(6);
 //        list.addToFront(8);
         list.display();
-       // list.middleNode();
+        // list.middleNode();
         System.out.println("reverse is");
 
         list.reverse();

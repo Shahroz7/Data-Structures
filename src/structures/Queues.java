@@ -10,31 +10,31 @@ public class Queues {
     private NodeList rear;
     private int size;
 
-    private class NodeList{
+    private class NodeList {
         private int data;
         private NodeList next;
 
-        public NodeList(int data){
+        public NodeList(int data) {
             this.data = data;
         }
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
-    public boolean isEmpty(){
-        return size==0;
+    public boolean isEmpty() {
+        return size == 0;
     }
 
-    public Queues(){
+    public Queues() {
         this.front = null;
-        this.rear =  null;
+        this.rear = null;
     }
 
-    public void enQueue(int data){
+    public void enQueue(int data) {
         NodeList node = new NodeList(data);
-        if(isEmpty())
+        if (isEmpty())
             front = node;
         else
             rear.next = node;
@@ -42,41 +42,41 @@ public class Queues {
         size++;
     }
 
-    public int deQueue(){
-        if(isEmpty())
+    public int deQueue() {
+        if (isEmpty())
             throw new NoSuchElementException("Queue is empty");
-        int result= front.data;
+        int result = front.data;
         front = front.next;
-        if(front==null)
-            rear=null;
+        if (front == null)
+            rear = null;
         size--;
         return result;
     }
 
-    public int front(){
-        if(isEmpty())
+    public int front() {
+        if (isEmpty())
             throw new NoSuchElementException("Queue is empty");
         return front.data;
     }
 
-    public int rear(){
-        if(isEmpty())
+    public int rear() {
+        if (isEmpty())
             throw new NoSuchElementException("Queue is empty");
         return rear.data;
     }
 
-    public void queuePrint(){
-        if(isEmpty())
+    public void queuePrint() {
+        if (isEmpty())
             return;
         NodeList current = front;
-        while(current != null){
+        while (current != null) {
             System.out.print(current.data + "->");
             current = current.next;
         }
         System.out.println("null");
     }
 
-    public static void main(String[]args){
+    public static void main(String[] args) {
         Queues queue = new Queues();
 
         queue.enQueue(10);

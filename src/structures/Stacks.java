@@ -4,39 +4,40 @@ import java.util.EmptyStackException;
 
 public class Stacks {
 
-    private class NodeList{
+    private class NodeList {
         private int data;
         private NodeList next;
 
-        public NodeList(int data){
-            this.data=data;
+        public NodeList(int data) {
+            this.data = data;
         }
     }
 
     private NodeList top;
     private int size;
 
-    public Stacks(){
+    public Stacks() {
         this.top = null;
         this.size = 0;
     }
 
-    public boolean isEmpty(){
-        return size==0;
+    public boolean isEmpty() {
+        return size == 0;
     }
 
-    public int size(){
-        return  size;
+    public int size() {
+        return size;
     }
-    public void push(int data){
+
+    public void push(int data) {
         NodeList node = new NodeList(data);
-        node.next=top;
-        top=node;
+        node.next = top;
+        top = node;
         size++;
     }
 
-    public int pop(){
-        if(isEmpty()){
+    public int pop() {
+        if (isEmpty()) {
             throw new EmptyStackException();
         }
         int result = top.data;
@@ -45,24 +46,24 @@ public class Stacks {
         return result;
     }
 
-    public int peek(){
-        if(isEmpty())
+    public int peek() {
+        if (isEmpty())
             throw new EmptyStackException();
         return top.data;
     }
 
-    public void displayStacks(){
-        if(isEmpty())
+    public void displayStacks() {
+        if (isEmpty())
             return;
         NodeList current = top;
-        while(current!=null){
+        while (current != null) {
             System.out.print(current.data + "->");
             current = current.next;
         }
         System.out.println("null");
     }
 
-    public static void main(String[]args){
+    public static void main(String[] args) {
         Stacks stacks = new Stacks();
         stacks.push(1);
         stacks.push(2);
