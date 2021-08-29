@@ -139,7 +139,6 @@ class DoublyLinkedList {
         dll.deleteFromEnd();
         dll.displayForward();
 
-
 //        System.out.println("Add at the end");
 //        dll.addToEnd(2);
 //        dll.displayForward();

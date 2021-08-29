@@ -82,6 +82,7 @@ public class Queues {
         queue.enQueue(10);
         queue.enQueue(20);
         queue.enQueue(30);
+        queue.enQueue(40);
         queue.queuePrint();
         System.out.println(queue.front());
         System.out.println(queue.rear());

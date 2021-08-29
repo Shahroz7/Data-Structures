@@ -68,6 +68,5 @@ public class BinaryTree {
         tree.preOrder(tree.root);
         tree.iterativePreOrder(tree.root);
 
-
     }
 }

@@ -67,6 +67,7 @@ public class Stacks {
         Stacks stacks = new Stacks();
         stacks.push(1);
         stacks.push(2);
+        stacks.push(3);
         stacks.displayStacks();
 
         System.out.println(stacks.peek());

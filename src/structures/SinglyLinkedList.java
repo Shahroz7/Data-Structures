@@ -178,7 +178,6 @@ public class SinglyLinkedList {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
 
-
 //        LinkedList.NodeList head = new LinkedList.NodeList(1);
 //        LinkedList linkedlist = new LinkedList(head);
 
